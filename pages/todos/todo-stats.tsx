@@ -1,6 +1,6 @@
 import { selector, useRecoilValue } from "recoil";
-import {todoListState} from './input'
-
+import { todoListState } from "./input";
+import { Box, ListIcon, ListItem, UnorderedList } from "@chakra-ui/react";
 
 export default function TodoListStats() {
   const todoListStatsState = selector({
@@ -30,11 +30,14 @@ export default function TodoListStats() {
   const formattedPercentCompleted = Math.round(percentCompleted);
 
   return (
-    <ul>
-      <li>Total items: {totalNum}</li>
-      <li>Items completed: {totalCompletedNum}</li>
-      <li>Items not completed: {totalUncompletedNum}</li>
-      <li>Percent completed: {formattedPercentCompleted}</li>
-    </ul>
+    <Box mt={8}>
+      <UnorderedList>
+        <ListItem listStyleType='none' key='whatever-key' mt={2}>
+          Total items: {totalNum}</ListItem>
+        <ListItem listStyleType='none' key='whatever-key' mt={2}>Items completed: {totalCompletedNum}</ListItem>
+        <ListItem listStyleType='none' key='whatever-key' mt={2}>Items not completed: {totalUncompletedNum}</ListItem>
+        <ListItem listStyleType='none' key='whatever-key' mt={2}>Percent completed: {formattedPercentCompleted}</ListItem>
+      </UnorderedList>
+    </Box>
   );
 }

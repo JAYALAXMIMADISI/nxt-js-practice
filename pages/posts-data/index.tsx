@@ -18,16 +18,14 @@ export default function PostList({ res }: any) {
 }
 
 export async function getStaticProps() {
-//   const res = dupData;
 
   const response=await fetch('https://jsonplaceholder.typicode.com/posts')
   const res=await response.json()
 
-//   const stylesheet = await JSON.parse(JSON.stringify(res)); // Converts response data to text
 
   return {
     props: {
-      res, // Changes prop name from `cc` to `stylesheet` to match component
+      res, 
     },
   };
 }

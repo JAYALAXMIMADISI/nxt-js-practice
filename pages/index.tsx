@@ -1,38 +1,34 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from './components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from './lib/posts';
-import axios from 'axios'
-import { dupData } from './posts-data/ex';
-import Link from 'next/link';
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
-import InputPage from './posts-data/input'
-import React from 'react';
-import UsersListComponent from './posts-data/users-list'
-
+import { RecoilRoot } from "recoil";
+import InputPage from "./todos/input";
+import React from "react";
+import UsersListComponent from "./posts-data/users-list";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import Main from "./main";
 
 export default function Home() {
-
-  
-  // const data=JSON.parse(stylesheet)
-
-  // const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
-  // const stylesheet = await JSON.stringify(res);
-
+  const theme = extendTheme({
+    colors: {
+      brand: {
+        50: "#44337A",
+        100: "#B794F4",
+        500: "#B794F4",
+      },
+      check: {
+        500: "red",
+      },
+    },
+  });
 
   return (
     <RecoilRoot>
-      <React.Suspense fallback={<div>Loading...</div>}>
-      <UsersListComponent/>
-      </React.Suspense>
+      <ChakraProvider theme={theme}>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <div style={{ display: "flex", width: "100%" }}>
+            <UsersListComponent />
+            <InputPage />
+          </div>
+        </React.Suspense>
+      </ChakraProvider>
     </RecoilRoot>
   );
 }
-
-

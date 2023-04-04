@@ -10,6 +10,7 @@ import TodoItemCreator from "./todo-item-creator";
 import TodoItem from "./todo-item";
 import TodoListStats from "./todo-stats";
 import TodoListFilters from "./todo-filter";
+import { Box, Center } from "@chakra-ui/react";
 
 const todoListState = atom({
   key: "TodoList",
@@ -62,13 +63,8 @@ export default function InputPage() {
   };
 
   return (
-    <>
-      {/* <input type="text" value={text} onChange={onChange} />
-      <br />
-      Echo: {text}
-      <br />
-      Character Count:{count}
-       */}
+    <Box w='50%' textAlign='center'>
+  <Center fontWeight='bold' fontSize='20px'>Todo List</Center>
 
       <TodoListStats />
       <TodoListFilters />
@@ -77,7 +73,7 @@ export default function InputPage() {
       {todoList.map((todoItem: any) => (
         <TodoItem item={todoItem} key={todoItem.id} />
       ))}
-    </>
+    </Box>
   );
 }
 

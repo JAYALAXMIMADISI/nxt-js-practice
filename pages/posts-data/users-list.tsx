@@ -1,6 +1,7 @@
 import React from "react";
 import { atom, useRecoilState, useRecoilValue, selector } from "recoil";
 import User from "./user";
+import { Box, Center } from "@chakra-ui/react";
 
 const userListAtom = atom({
   key: "makeAtomUserList",
@@ -22,8 +23,9 @@ export default function UsersListComponent() {
 
 
   return (
-    <>
+    <Box w='50%' textAlign='center'>
+    <Center fontWeight='bold' fontSize='20px'>Posts Data</Center>
       <User/>
-    </>
+    </Box>
   );
 }

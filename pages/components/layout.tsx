@@ -8,6 +8,7 @@ const name = 'Your Name';
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }:any) {
+  console.log("check for home route",home)
   return (
     <div className={styles.container}>
       <Head>
@@ -25,7 +26,7 @@ export default function Layout({ children, home }:any) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -57,7 +58,7 @@ export default function Layout({ children, home }:any) {
             </h2>
           </>
         )}
-      </header>
+      </header> */}
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

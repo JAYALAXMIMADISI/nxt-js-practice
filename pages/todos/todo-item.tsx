@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import {todoListState} from './input'
+import { Box, Button, Checkbox, Input } from "@chakra-ui/react";
 
 export default function TodoItem({ item }: any) {
   const [todoList, setTodoList] = useRecoilState<any>(todoListState);
@@ -30,15 +31,20 @@ export default function TodoItem({ item }: any) {
   };
 
   return (
-    <div>
-      <input type="text" value={item.text} onChange={editItemText} />
-      <input
-        type="checkbox"
-        checked={item.isComplete}
-        onChange={toggleItemCompletion}
+    <Box display='flex' justifyContent='center'>
+      <Input
+        type="text"
+        value={item.text}
+        onChange={editItemText}
+        w="200px"
+        m="10px"
       />
-      <button onClick={deleteItem}>X</button>
-    </div>
+      <Checkbox colorScheme="check"  size='lg' onChange={toggleItemCompletion}>
+      </Checkbox>
+      <Button onClick={deleteItem} m="10px" size='xs' mt='18px' colorScheme="brand">
+        X
+      </Button>
+    </Box>
   );
 }
 
