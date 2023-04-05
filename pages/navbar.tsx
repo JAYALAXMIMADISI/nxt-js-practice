@@ -1,14 +1,11 @@
-import { Box } from '@chakra-ui/react'
-import Link from 'next/link'
-import React from 'react'
-import { RecoilRoot } from 'recoil'
+import React from "react";
 
 function Navbar() {
   return (
-   <>
-   <div style={{backgroundColor:'blue',height:'100px'}}></div>
-   </>
-  )
+    <>
+      <div style={{ backgroundColor: "teal", height: "20px" }}></div>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -2,7 +2,6 @@ import Layout from "../components/layout";
 import { dupData } from "./ex";
 
 export default function Post({ res }: any) {
-  console.log("check paths data", res);
   return (
     <Layout>
       <h1>
@@ -16,11 +15,12 @@ export async function getStaticPaths() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const res = await response.json();
 
-  const paths = res.map((post: any) => {
+  const paths = await res.map((post: any) => {
     return { params: { id: `${post.id}` } };
   });
 
   return {
+    paths: paths,
     fallback: false,
   };
 }

@@ -15,7 +15,7 @@ export default function User() {
 
   return (
     <>
-      <VStack w="100%" mt={10}>
+      <VStack w="100%" mt={5}>
         {usersList.map((item: any) => (
           <Link
             href={{

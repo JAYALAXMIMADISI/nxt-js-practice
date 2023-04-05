@@ -63,17 +63,21 @@ export default function InputPage() {
   };
 
   return (
-    <Box w='50%' textAlign='center'>
-  <Center fontWeight='bold' fontSize='20px'>Todo List</Center>
+    <>
+      <Box w="50%" textAlign="center">
+        <Center fontWeight="bold" fontSize="20px">
+          Todo List
+        </Center>
 
-      <TodoListStats />
-      <TodoListFilters />
-      <TodoItemCreator />
+        <TodoListStats />
+        <TodoListFilters />
+        <TodoItemCreator />
 
-      {todoList.map((todoItem: any) => (
-        <TodoItem item={todoItem} key={todoItem.id} />
-      ))}
-    </Box>
+        {todoList.map((todoItem: any) => (
+          <TodoItem item={todoItem} key={todoItem.id} />
+        ))}
+      </Box>
+    </>
   );
 }
 

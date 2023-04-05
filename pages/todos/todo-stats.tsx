@@ -30,13 +30,20 @@ export default function TodoListStats() {
   const formattedPercentCompleted = Math.round(percentCompleted);
 
   return (
-    <Box mt={8}>
+    <Box mt={5}>
       <UnorderedList>
-        <ListItem listStyleType='none' key='whatever-key' mt={2}>
-          Total items: {totalNum}</ListItem>
-        <ListItem listStyleType='none' key='whatever-key' mt={2}>Items completed: {totalCompletedNum}</ListItem>
-        <ListItem listStyleType='none' key='whatever-key' mt={2}>Items not completed: {totalUncompletedNum}</ListItem>
-        <ListItem listStyleType='none' key='whatever-key' mt={2}>Percent completed: {formattedPercentCompleted}</ListItem>
+        <ListItem listStyleType="none" key="whatever-key" mt={2}>
+          Total items: {totalNum}
+        </ListItem>
+        <ListItem listStyleType="none" key="whatever-key" mt={2}>
+          Items completed: {totalCompletedNum}
+        </ListItem>
+        <ListItem listStyleType="none" key="whatever-key" mt={2}>
+          Items not completed: {totalUncompletedNum}
+        </ListItem>
+        <ListItem listStyleType="none" key="whatever-key" mt={2}>
+          Percent completed: {formattedPercentCompleted}
+        </ListItem>
       </UnorderedList>
     </Box>
   );
